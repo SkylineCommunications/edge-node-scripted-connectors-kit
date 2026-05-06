@@ -83,5 +83,4 @@ python wheels_resolver.py resolve -P "requests==2.33.1"
 | `2` | Conflicting dependencies |
 | `3` | Requirements file not found |
 | `4` | Python version is lower than 3.10 |
-| `5` | Invalid mode |
 | `99` | Unexpected error |
