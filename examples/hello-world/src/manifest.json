@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0",
+  "project": {
+    "id": "0c032f3d-ad7e-470f-91a6-c69825b92dfc",
+    "name": "Hello World",
+    "version": "1.0.0",
+    "description": "Posts a simple hello-world JSON payload with a timestamp to validate edge node connectivity.",
+    "author": "Skyline Communications"
+  },
+  "runtime": {
+    "language": "python",
+    "supported_platforms": ["x86_64-windows-msvc", "x86_64-linux-gnu"],
+    "python": {
+      "version": ">=3.14;<3.15",
+      "entry_point": "run/main.py"
+    }
+  }
+}
