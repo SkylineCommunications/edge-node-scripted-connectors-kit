@@ -1,7 +1,8 @@
 import requests
 
-import datetime
 import argparse
+import datetime
+import sys
 
 def main(data_endpoint: str, run_secret: str) -> None:
     """
@@ -20,6 +21,7 @@ def main(data_endpoint: str, run_secret: str) -> None:
     now = datetime.datetime.now()
     json = {"message": "Hello world!", "timestamp": now.isoformat()}
     response = requests.post(data_endpoint, headers=headers, json=json)
+
     print(f"Response status code: {response.status_code}")
     print(f"Response content: {response.content}")
 
@@ -35,4 +37,4 @@ if __name__ == "__main__":
     try:
         main("http://localhost:5016/api/data", run_secret)
     except Exception as e:
-        print(f"An error occurred: {e}")
+        print(f"An error occurred: {e}", file=sys.stderr)
