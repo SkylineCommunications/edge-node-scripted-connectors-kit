@@ -18,7 +18,6 @@ EXIT_PIP_NOT_FOUND = 1
 EXIT_CONFLICTING_DEPENDENCIES = 2
 EXIT_REQUIREMENTS_NOT_FOUND = 3
 EXIT_PYTHON_TOO_OLD = 4
-EXIT_INVALID_ARGUMENTS = 5
 EXIT_UNEXPECTED_ERROR = 99
 
 # make logger available for everything in this script
@@ -723,13 +722,12 @@ if __name__ == "__main__":
 
     # Run the selected mode
     try:
-        if args.mode.lower() == "resolve":
+        if args.mode == "resolve":
             execute_resolve_mode(args.package, python_version, python_version_pip_format)
-        elif args.mode.lower() == "download":
+        elif args.mode == "download":
             execute_download_mode(Path(args.requirements), python_version, python_version_pip_format, Path(args.output))
         else:
-            logger.critical("Invalid mode '%s'", args.mode)
-            sys.exit(EXIT_INVALID_ARGUMENTS)
+            pass # argparse ensures this branch is never reached as providing an invalid mode will already stop the application with an error message
     except PipNotFoundException as e:
         logger.critical(e.message)
         sys.exit(EXIT_PIP_NOT_FOUND)
