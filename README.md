@@ -2,6 +2,8 @@
 
 A collection of resources for building and working with DataMiner Edge Node scripted connectors.
 
+> **Archived:** This repository is no longer maintained. Scripted Connectors have become connector scripts and are now part of existing connector solutions. The folder structure has been incorporated into a Visual Studio template, and wheel resolution is handled by the default CI/CD packaging tools included with DIS. For more information, see the [DataMiner Docs](https://docs.dataminer.services/develop/devguide/Connector/ConnectorScripts.html).
+
 ---
 
 ## Repository Structure
